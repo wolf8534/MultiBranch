@@ -1,8 +1,8 @@
 pipeline {
-    agent any
+    agent { label 'jenkins-slave' }
     environment {
         DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v3'
-        KUBE_NAMESPACE = 'default'
+        KUBE_NAMESPACE = 'dev'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
     stages {
