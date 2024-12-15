@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v2'
-        KUBE_NAMESPACE = 'default'
+        KUBE_NAMESPACE = 'prod'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
     stages {
