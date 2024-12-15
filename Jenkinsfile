@@ -1,15 +1,15 @@
 pipeline {
-    agent any
+    agent { label 'jenkins-slave' }
     environment {
-        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v2'
-        KUBE_NAMESPACE = 'default'
+        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v6'
+        KUBE_NAMESPACE = 'test'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
     stages {
         stage('Checkout') {
             steps {
                 script {
-                    git url: 'https://github.com/wolf8534/ivolve-.git', branch: 'main'
+                    git url: 'https://github.com/wolf8534/ivolve-.git', branch: 'third'
                 }
             }
         }
