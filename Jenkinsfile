@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-slave' }
     environment {
-        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v4'
+        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v5'
         KUBE_NAMESPACE = 'prod'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
