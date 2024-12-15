@@ -46,7 +46,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'k8s_token', variable: 'K8S_TOKEN')]) {
                         sh """
-                        kubectl --kubeconfig=/home/ubuntu/jenkins/.kube/config --token=$K8S_TOKEN apply -f $DEPLOYMENT_YAML -n $KUBE_NAMESPACE
+                        kubectl --kubeconfig=/home/ubuntu/jenkins/.kube/config  apply -f $DEPLOYMENT_YAML -n $KUBE_NAMESPACE
                         """
                     }
                 }
