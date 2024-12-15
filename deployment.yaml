@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: my-app-deployment
+  name: my-app-deployment-test
   labels:
     app: my-app
 spec:
@@ -18,4 +18,4 @@ spec:
       - name: my-app-container
         image: docker.io/ahmedmaher07/ivolve:latest 
         ports:
-        - containerPort: 80  
+        - containerPort: 8080 
