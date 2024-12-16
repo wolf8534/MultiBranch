@@ -65,9 +65,11 @@ pipeline {
     post {
         success {
             echo "Pipeline executed successfully."
+            slackSend(channel: '#your-channel', message: "Pipeline executed successfully! :tada:") // Slack success notification
         }
         failure {
             echo "Pipeline failed."
+            slackSend(channel: '#your-channel', message: "Pipeline failed. :x:") // Slack failure notification
         }
     }
 }
