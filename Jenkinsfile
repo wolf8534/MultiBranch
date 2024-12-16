@@ -1,7 +1,7 @@
 pipeline {
     agent { label 'jenkins-slave' }
     environment {
-        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v3'
+        DOCKER_IMAGE = 'docker.io/ahmedmaher07/ivolve:v9'
         KUBE_NAMESPACE = 'dev'
         DEPLOYMENT_YAML = 'deployment.yaml'
     }
@@ -24,7 +24,7 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'Docker_hub', usernameVariable: 'DOCKER_USERNAME', passwordVariable: 'DOCKER_PASSWORD')]) {
                     sh """
                     docker login -u $DOCKER_USERNAME -p $DOCKER_PASSWORD
-                  //  docker push $DOCKER_IMAGE
+                  // docker push $DOCKER_IMAGE
                     """
                 }
             }
