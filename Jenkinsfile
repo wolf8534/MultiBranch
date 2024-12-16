@@ -46,7 +46,7 @@ pipeline {
                 script {
                     withCredentials([string(credentialsId: 'k8s_token', variable: 'K8S_TOKEN')]) {
                         sh """
-                        kubectl --kubeconfig=/home/ubuntu/jenkins/.kube/config  apply -f $DEPLOYMENT_YAML -n $KUBE_NAMESPACE
+                        kubectl --kubeconfig=/home/ubuntu/jenkins/.kube/config apply -f $DEPLOYMENT_YAML -n $KUBE_NAMESPACE
                         """
                     }
                 }
@@ -65,11 +65,9 @@ pipeline {
     post {
         success {
             echo "Pipeline executed successfully."
-            slackSend(channel: '#your-channel', message: "Pipeline executed successfully! :tada:") // Slack success notification
         }
         failure {
             echo "Pipeline failed."
-            slackSend(channel: '#your-channel', message: "Pipeline failed. :x:") // Slack failure notification
         }
     }
 }
